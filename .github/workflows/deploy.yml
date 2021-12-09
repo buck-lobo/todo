@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Node setup
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - name: setup git auth
@@ -22,11 +23,9 @@ jobs:
           username: ${{ secrets.USER }}
           access_token: ${{ secrets.VUEJS_ACCESS_TOKEN }}
         run: |
-          git config --global credential.helper store
           echo "https://${access_token}:x-oauth-basic@github.com" > ~/.git-credentials
-          git config --global user.email $email
-          git config --global user.name $username
-          git config --global user.password $access_token
+          git config user.email $email
+          git config user.name $username
       - name: deploy to gh-pages
         run: |
           npm i
