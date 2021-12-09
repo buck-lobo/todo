@@ -33,6 +33,6 @@ body {
 
 .app h1 {
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 5.5px;
 }
 </style>
