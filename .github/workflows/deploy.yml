@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.USER }}
           access_token: ${{ secrets.VUEJS_ACCESS_TOKEN }}
         run: |
-          echo "https://${access_token}:x-oauth-basic@github.com" > ~/.git-credentials
+          echo "https://$access_token:x-oauth-basic@github.com" > ~/.git-credentials
           git config user.email $email
           git config user.name $username
       - name: deploy to gh-pages
@@ -33,5 +33,5 @@ jobs:
           cd dist
           git init
           git add -A
-          git commit -m "🚀 Deploy id ${GITHUB_RUN_ID}"
-          git push -f "https://github.com/${GITHUB_REPOSITORY}.git" master:gh-pages
+          git commit -m "🚀 Deploy id $GITHUB_RUN_ID"
+          git push -f "https://github.com/$GITHUB_REPOSITORY.git" master:gh-pages
