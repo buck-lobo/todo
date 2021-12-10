@@ -20,6 +20,9 @@ export default {
         todoList: bus.todoList
       }
     },
+    created(){
+ 
+    }
 }
 </script>
 

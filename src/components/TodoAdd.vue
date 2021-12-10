@@ -22,6 +22,7 @@ export default {
   methods:{
     addTodo(){
       const newTodoItem = {
+        id: bus.todoList.length,
         description: this.description,
         done: false
       }
