@@ -62,6 +62,7 @@ export default {
     },
     onDragLeave(token){
       bus.dragLeave(token)
+      bus.doneDragging(token)
     },
     onDrop(event, targetTodo, token){
       const todoToken = event.dataTransfer.getData('todoToken')
